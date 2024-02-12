@@ -1,42 +1,168 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>康文昌的在线HTML 教学小工具</title>
-    <style>  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Felix的个人网站</title>
+    <style>
       body {
         margin: 0;
+        min-height: 100vh;
+        background-color: #eee;
+      }
+      .flex {
+        display: flex;
+      }
+      .container {
+        display: flex;
+        width: 100%;
+        overflow-y: visible;
+      }
+      .columnL,
+      .columnR {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+      .columnL {
+        align-items: flex-end;
+      }
+      .columnR {
+        align-items: flex-start;
+      }
+      .box {
+        height: 600px;
+        max-width: 600px;
+        width: 100%;
+        background-color: rgb(0, 0, 0);
+        border-radius: 30px;
+        box-shadow: 2px 7px 20px 0px rgba(0, 0, 0, 0.2);
+        margin-top: 30px;
+
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+
+        position: relative;
+      }
+      .box:hover {
+        transform: scale(1.06);
+        box-shadow: 10px 15px 30px 0px rgba(0, 0, 0, 0.4);
+      }
+
+      .image-container {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+      }
+
+      .image {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        object-fit: cover;
+        transform: scale(1.2);
+        opacity: 0.8;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+      }
+
+      .image:hover {
+        transform: scale(1);
+        opacity: 1;
+      }
+      .sidebar {
+        display: flex;
+        width: 200px;
+        z-index: 2;
+        background-color: white;
+      }
+      .margin {
+        margin: 30px;
+      }
+      .marginR {
+        margin-right: 30px;
+      }
+      .shadow {
+        box-shadow: 2px 7px 10px 0px rgba(0, 0, 0, 0.2);
+      }
+
+      @media (max-width: 800px) {
+        .hideSideBar {
+          display: none;
+        }
+        .margin {
+          margin: 25px;
+        }
+        .marginR {
+          margin-right: 10px;
+        }
+        .box {
+          height: 300px;
+          margin-top: 15px;
+        }
+        .image {
+          transform: scale(1);
+          opacity: 1;
+        }
       }
     </style>
   </head>
-  <body>
-    <div style="
-      background-color:#f1f1f6;
-      text-align: center;
-      padding:30px;
-    ">
-      <img src=https://b0.bdstatic.com/32bab377e72087504c6c3664588bb513.jpg@h_1280 width="80" alt="portrait">
+  <body class="flex">
+    <!--侧边栏-->
+    <div style="width: 200px; z-index: 2" class="sideBar hideSideBar">
+      <!--头像栏-->
+      <div
+        class="flex"
+        style="padding: 10px; align-items: center; justify-content: center"
+      >
+        <div style="border-bottom: 1px solid"></div>
+        <img
+          src="https://kangwenchang.com/logo.png"
+          width="40px"
+          height="40px"
+          alt="Felix的头像"
+        />
+        <div style="margin-left: 10px">Felix</div>
+      </div>
     </div>
-    <div style="
-      max-width:500px;
-      margin:30px auto;
-      padding:20px;
-      line-height:1.7;
-    ">
-      <p>正文</p>
-      <p>正文</p>
-      <p>正文</p>
-    </div>
-    <div <div style="
-      background-color:#f1f1f6;
-      text-align: center;
-      padding:30px;
-      font-size:14px;
-    ">
-      <p>我的第一个html</p>
-      <p>版权声明</p>
-      <a href="https://www.midorg.com/">网站制作工具</a>
+    <!--主区域-->
+    <div class="container margin">
+      <!--左侧内容-->
+      <div class="columnL marginR">
+        <div class="box">
+          <div class="image-container">
+            <img src="assets/proj1.jpg" class="image" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="image-container">
+            <img src="assets/proj3.jpg" class="image" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="image-container">
+            <img src="assets/proj5.jpg" class="image" />
+          </div>
+        </div>
+      </div>
+      <!--右侧内容-->
+      <div class="columnR">
+        <div class="box">
+          <div class="image-container">
+            <img src="assets/proj2.jpg" class="image" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="image-container">
+            <img src="assets/proj4.jpg" class="image" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="image-container">
+            <img src="assets/proj6.jpg" class="image" />
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
