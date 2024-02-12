@@ -7,15 +7,14 @@
     <style>
       body {
         margin: 0;
-        min-height: 100vh;
-        background-color: #eee;
+        background-color: #e3e3e3;
       }
       .flex {
         display: flex;
       }
       .container {
         display: flex;
-        width: 100%;
+        width: calc(100% - 200px);
         overflow-y: visible;
       }
       .columnL,
@@ -47,7 +46,6 @@
         transform: scale(1.06);
         box-shadow: 10px 15px 30px 0px rgba(0, 0, 0, 0.4);
       }
-
       .image-container {
         position: relative;
         overflow: hidden;
@@ -55,7 +53,6 @@
         height: 100%;
         border-radius: 30px;
       }
-
       .image {
         width: 100%;
         height: 100%;
@@ -65,16 +62,9 @@
         opacity: 0.8;
         transition: transform 0.5s ease, opacity 0.5s ease;
       }
-
       .image:hover {
         transform: scale(1);
         opacity: 1;
-      }
-      .sidebar {
-        display: flex;
-        width: 200px;
-        z-index: 2;
-        background-color: white;
       }
       .margin {
         margin: 30px;
@@ -82,8 +72,34 @@
       .marginR {
         margin-right: 30px;
       }
-      .shadow {
-        box-shadow: 2px 7px 10px 0px rgba(0, 0, 0, 0.2);
+      .sideContainer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        width: 200px;
+        height: 100vh;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      .middleText {
+        padding: 10px;
+        padding: 30px;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+      }
+
+      .text1 {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .text1 {
+        font-size: 14px;
+        font-weight: 600;
       }
 
       @media (max-width: 800px) {
@@ -109,22 +125,26 @@
   </head>
   <body class="flex">
     <!--侧边栏-->
-    <div style="width: 200px; z-index: 2" class="sideBar hideSideBar">
+    <div style="width: 200px; z-index: 2" class="sideContainer hideSideBar">
       <!--头像栏-->
-      <div
-        class="flex"
-        style="padding: 10px; align-items: center; justify-content: center"
-      >
-        <div style="border-bottom: 1px solid"></div>
-        <img
-          src="https://kangwenchang.com/logo.png"
-          width="40px"
-          height="40px"
-          alt="Felix的头像"
-        />
-        <div style="margin-left: 10px">Felix</div>
+      <div style="height: 30px"></div>
+      <div style="padding: 30px; align-items: center; justify-content: center">
+        <img src="assets/protrait.png" width="60px" height="60px" alt="头像" />
+        <div style="font-size: 20px; font-weight: 600">林慈丰</div>
+        <div style="font-size: 16px; font-weight: bold">Lin Cifeng</div>
+        <div style="height: 10px; border-bottom: 1px solid"></div>
+      </div>
+
+      <!-- 中部文字 -->
+      <div class="middleText">
+        <p>设计之力</p>
+      </div>
+      <!-- 底部文字 -->
+      <div style="padding: 30px">
+        <p>邮箱: 1498367482@qq.com</p>
       </div>
     </div>
+    <div style="width: 200px"></div>
     <!--主区域-->
     <div class="container margin">
       <!--左侧内容-->
