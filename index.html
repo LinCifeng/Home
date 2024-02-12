@@ -86,7 +86,6 @@
       }
 
       .middleText {
-        padding: 10px;
         padding: 30px;
         flex-grow: 1;
         display: flex;
@@ -96,10 +95,15 @@
       .text1 {
         font-size: 16px;
         font-weight: 600;
+        color: rgb(123, 123, 123);
       }
-      .text1 {
+      .text2 {
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .text3 {
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 400;
       }
 
       @media (max-width: 800px) {
@@ -120,6 +124,9 @@
           transform: scale(1);
           opacity: 1;
         }
+        .container {
+          width: 100%;
+        }
       }
     </style>
   </head>
@@ -137,31 +144,37 @@
 
       <!-- 中部文字 -->
       <div class="middleText">
-        <p>设计之力</p>
+        <div>
+          <p class="text1">设计</p>
+          <p class="text2">代码与硬件</p>
+          <p class="text2">虚构游戏</p>
+          <p class="text2">虚构游戏</p>
+          <p class="text2">虚构游戏</p>
+        </div>
       </div>
       <!-- 底部文字 -->
       <div style="padding: 30px">
-        <p>邮箱: 1498367482@qq.com</p>
+        <p class="text3">邮箱: 1498367482@qq.com</p>
       </div>
     </div>
-    <div style="width: 200px"></div>
+    <div style="width: 200px" class="hideSideBar"></div>
     <!--主区域-->
     <div class="container margin">
       <!--左侧内容-->
       <div class="columnL marginR">
         <div class="box">
           <div class="image-container">
-            <img src="/assets/proj1.jpg" class="image" />
+            <img src="assets/proj1.jpg" class="image" />
           </div>
         </div>
         <div class="box">
           <div class="image-container">
-            <img src="/assets/proj3.jpg" class="image" />
+            <img src="assets/proj3.jpg" class="image" />
           </div>
         </div>
         <div class="box">
           <div class="image-container">
-            <img src="/assets/proj5.jpg" class="image" />
+            <img src="assets/proj5.jpg" class="image" />
           </div>
         </div>
       </div>
@@ -169,17 +182,17 @@
       <div class="columnR">
         <div class="box">
           <div class="image-container">
-            <img src="/assets/proj2.jpg" class="image" />
+            <img src="assets/proj2.jpg" class="image" />
           </div>
         </div>
         <div class="box">
           <div class="image-container">
-            <img src="/assets/proj4.jpg" class="image" />
+            <img src="assets/proj4.jpg" class="image" />
           </div>
         </div>
         <div class="box">
           <div class="image-container">
-            <img src="/assets/proj6.jpg" class="image" />
+            <img src="assets/proj6.jpg" class="image" />
           </div>
         </div>
       </div>
